@@ -2,7 +2,7 @@ node('dev') {
     stage('Checkout') {
         steps {
             git branch: 'develop',
-                credentialsId: 'ubuntu-jenkins',
+                credentialsId: 'GitHub',
                 url: 'git@github.com:edmundtetteh/movies-loader.git'
         }
     }
