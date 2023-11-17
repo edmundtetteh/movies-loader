@@ -3,7 +3,7 @@ node('dev') {
         steps {
             checkout([$class: 'GitSCM', branches: [[name: 'develop']], 
                       userRemoteConfigs: [[url: 'git@github.com:edmundtetteh/movies-loader.git']],
-                      credentialsId: 'ubuntu-jenkins'])
+                      credentialsId: 'GitHub'])
         }
     }
 
