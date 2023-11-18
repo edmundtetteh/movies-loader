@@ -2,7 +2,7 @@ node('dev') {
     stage('Checkout') {
         steps {
             checkout([$class: 'GitSCM', branches: [[name: 'develop']], 
-                      userRemoteConfigs: [[url: 'git@github.com:edmundtetteh/movies-loader.git']],
+                      userRemoteConfigs: [[url: 'https://github.com/edmundtetteh/movies-loader.git']],
                       credentialsId: 'GitHub'])
         }
     }
@@ -10,6 +10,25 @@ node('dev') {
     // Add more stages or steps as needed
 }
 
+/**
+pipeline {
+    agent { label 'dev' }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    checkout([$class: 'GitSCM', branches: [[name: 'develop']],
+                              userRemoteConfigs: [[url: 'git@github.com:edmundtetteh/movies-loader.git']],
+                              credentialsId: 'GitHub'])
+                }
+            }
+        }
+
+        // Add more stages or steps as needed
+    }
+}
+**/
 
 // node('dev') {
 //     stage('Checkout') {
