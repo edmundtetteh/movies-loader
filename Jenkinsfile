@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     checkout([$class: 'GitSCM', branches: [[name: 'develop']],
-                              userRemoteConfigs: [[url: 'git@github.com:edmundtetteh/movies-loader.git']],
+                              userRemoteConfigs: [[url: 'https://github.com/edmundtetteh/movies-loader.git']],
                               credentialsId: 'GitHub'])
                 }
             }
