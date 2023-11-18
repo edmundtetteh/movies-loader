@@ -10,23 +10,34 @@
 //     // Add more stages or steps as needed
 // }
 
-pipeline {
-    agent { label 'dev' }
+// pipeline {
+//     agent { label 'dev' }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    checkout([$class: 'GitSCM', branches: [[name: 'develop']],
-                              userRemoteConfigs: [[url: 'https://github.com/edmundtetteh/movies-loader.git']],
-                              credentialsId: 'ubuntu-jenkins'])
-                }
-            }
-        }
+//     stages {
+//         stage('Checkout') {
+//             steps {
+//                 script {
+//                     checkout([$class: 'GitSCM', branches: [[name: 'develop']],
+//                               userRemoteConfigs: [[url: 'https://github.com/edmundtetteh/movies-loader.git']],
+//                               credentialsId: 'ubuntu-jenkins'])
+//                 }
+//             }
+//         }
 
-        // Add more stages or steps as 
+//         // Add more stages or steps as 
+//     }
+// }
+
+node('dev') {
+    stage('Checkout') {
+        checkout([$class: 'GitSCM', branches: [[name: 'develop']],
+                  userRemoteConfigs: [[url: 'https://github.com/edmundtetteh/movies-loader.git']],
+                  credentialsId: 'ubuntu-jenkins'])
     }
+
+    // Add more stages or steps as needed
 }
+
 
 
 // node('dev') {
