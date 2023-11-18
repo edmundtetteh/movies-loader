@@ -29,17 +29,17 @@
 // }
 
 
-node('dev') {
-    stage('Checkout') {
-        steps {
-            git branch: 'develop',
-                credentialsId: 'ubuntu-jenkins',
-                url: 'https://github.com/edmundtetteh/movies-loader.git'
-        }
-    }
+// node('dev') {
+//     stage('Checkout') {
+//         steps {
+//             git branch: 'develop',
+//                 credentialsId: 'ubuntu-jenkins',
+//                 url: 'https://github.com/edmundtetteh/movies-loader.git'
+//         }
+//     }
 
-    // Add more stages or steps as needed
-}
+//     // Add more stages or steps as needed
+// }
 
 
 // node {
@@ -53,13 +53,13 @@ node('dev') {
 //     // Add more stages or steps as needed
 // }
 
-// node('dev') {
-//     stage('Checkout') {
-//         steps {
-//             git branch: 'develop',
-//                 credentialsId: 'ubuntu-jenkins',
-//                 url: 'git@github.com:edmundtetteh/movies-loader.git'
-//         }
-//     }
-// }
+
+stage('Checkout') {
+    steps {
+        git branch: 'develop',
+            credentialsId: 'ubuntu-jenkins',
+            url: 'https://github.com/edmundtetteh/movies-loader.git'
+    }
+}
+
 
