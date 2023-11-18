@@ -42,7 +42,7 @@ node('dev') {
     stage('Checkout') {
         checkout([$class: 'GitSCM', branches: [[name: 'develop']],
                   userRemoteConfigs: [[url: 'git@github.com:edmundtetteh/movies-loader.git']],
-                  credentialsId: 'github-ssh'])
+                  credentialsId: 'ubuntu-jenkins'])
     }
 
     // Add more stages or steps as needed
